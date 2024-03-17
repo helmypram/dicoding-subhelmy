@@ -7,8 +7,6 @@ body {
   margin: 0;
   padding: 0;
 
-  align-items: center;
-  justify-content: center;
 }
  
 h2,
@@ -83,28 +81,29 @@ nav {
 }
  
 main {
-  padding: 20px;
- 
+  padding: 1px;
+  flex-direction: row;
   display: flex;
-  gap: 1.5rem;
+  gap: 0.5rem;
 }
  
 #content {
-  flex: 5;
+  flex: 3;
  
   display: flex;
   flex-flow: column nowrap;
-  gap: 1rem 2rem;
+  gap: 1rem 1rem;
 }
  
 header {
   display: inline;
 }
 
-.container {
-  max-width: 2000px;
-  width: 100%;
-  justify-content: center;
+
+aside {
+  flex: 1;
+  width: 250px;
+  height: 200px;
 }
  
 @media screen and (max-width: 1000px) {
@@ -224,5 +223,33 @@ header {
   }
   .slider-scrollbar .scrollbar-thumb {
     width: 20%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  main {
+    flex-flow: column nowrap;
+  }
+
+  main aside {
+    align-self: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav ul {
+    justify-content: center;
+  }
+
+  main aside {
+    align-self: stretch;
+  }
+  main {
+    flex-direction: column; /* Ubah menjadi tata letak kolom pada layar kecil */
+  }
+
+  #content,
+  aside {
+    flex: 1; /* Lebar sama untuk layar kecil */
   }
 }
